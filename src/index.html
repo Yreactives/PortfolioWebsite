@@ -18,6 +18,65 @@
 
     <!-- Customized Bootstrap Stylesheet -->  
     <link href="assets/css/style.css" rel="stylesheet">
+    <script type="text/javascript">
+      // Fungsi-fungsi berikut hanya untuk aplikasi Android
+      
+      function showAndroidSms()
+      {
+          if (typeof Android !== "undefined" || Android !== null)
+          {
+              Android.showSms();
+          }
+          else
+          {
+              alert("Object not found");
+          }
+      }
+  
+      function showAndroidToast(message)
+      {
+          if (typeof Android !== "undefined" || Android !== null)
+          {
+              Android.showToast(message);
+          }
+          else
+          {
+              alert("Object not found");
+          }
+      }
+  </script>
+  
+  <script type="text/javascript">
+      // Fungsi-fungsi berikut hanya untuk aplikasi Windows
+      
+      function showWindowsFontDialog()
+      {
+          var option =
+          {
+              "view": window,
+              "bubbles": false,
+              "cancelable": false,
+              "data": ""
+          };
+          
+          event = new MessageEvent("ShowFontDialog", option);
+          document.dispatchEvent(event);
+      }
+      
+      function showWindowsMessageBox(message)
+      {
+          var option =
+          {
+              "view": window,
+              "bubbles": false,
+              "cancelable": false,
+              "data": message
+          };
+          
+          event = new MessageEvent("ShowMessageBox", option);
+          document.dispatchEvent(event);
+      }
+  </script>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
   <app-root></app-root>

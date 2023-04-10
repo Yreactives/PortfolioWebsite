@@ -1,62 +1,4 @@
-<script type="text/javascript">
-    // Fungsi-fungsi berikut hanya untuk aplikasi Android
-    
-    function showAndroidSms()
-    {
-        if (typeof Android != "undefined" || Android != null)
-        {
-            Android.showSms();
-        }
-        else
-        {
-            alert("Object not found");
-        }
-    }
 
-    function showAndroidToast(message)
-    {
-        if (typeof Android != "undefined" || Android != null)
-        {
-            Android.showToast(message);
-        }
-        else
-        {
-            alert("Object not found");
-        }
-    }
-</script>
-
-<script type="text/javascript">
-    // Fungsi-fungsi berikut hanya untuk aplikasi Windows
-    
-    function showWindowsFontDialog()
-    {
-        var option =
-        {
-            "view": window,
-            "bubbles": false,
-            "cancelable": false,
-            "data": ""
-        };
-        
-        event = new MessageEvent("ShowFontDialog", option);
-        document.dispatchEvent(event);
-    }
-    
-    function showWindowsMessageBox(message)
-    {
-        var option =
-        {
-            "view": window,
-            "bubbles": false,
-            "cancelable": false,
-            "data": message
-        };
-        
-        event = new MessageEvent("ShowMessageBox", option);
-        document.dispatchEvent(event);
-    }
-</script>
 
 <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
   <a href="index.html" class="navbar-brand ml-lg-3">
@@ -96,7 +38,8 @@
                 <h5 class="font-weight-normal text-white m-0 ml-4 d-none d-sm-block">I Specialize in Machine Learning and Data Analyst. I Mainly Work Using Big Dataset From Kaggle</h5>
                 <button onclick="alert('202102241 Ronny')">alert</button>
                 <button onclick="showAndroidSms()">Show SMS</button>
-                <button onclick="showAndroidToast()">Show Toast</button>
+                <button onclick="showAndroidToast('202102241 Ronny')">Show Toast</button>
+                <button onclick="showWindowsMessageBox()">Window</button>
               </div>
           </div>
       </div>
